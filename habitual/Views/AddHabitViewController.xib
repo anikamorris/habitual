@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddHabitViewController" customModule="habitual" customModuleProvider="target">
+            <connections>
+                <outlet property="collectionView" destination="SQD-ju-ez6" id="2X4-AZ-fgJ"/>
+                <outlet property="pickPhotoButton" destination="X7R-KM-WDm" id="OYX-2z-Bei"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SQD-ju-ez6">
+                    <rect key="frame" x="15" y="59" width="384" height="672"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="udu-CC-QhH">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xRK-bR-MXE"/>
+                        <outlet property="delegate" destination="-1" id="Jbp-vF-E8n"/>
+                    </connections>
+                </collectionView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X7R-KM-WDm">
+                    <rect key="frame" x="15" y="792" width="384" height="50"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="xHL-Tr-gfz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Pick Photo">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="pickPhotoButtonPressed:" destination="-1" eventType="touchUpInside" id="TAc-4a-1KD"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SQD-ju-ez6" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="15" id="3bD-SS-Hmb"/>
+                <constraint firstItem="X7R-KM-WDm" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="4ic-hC-fnh"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="X7R-KM-WDm" secondAttribute="bottom" constant="20" id="7nj-pL-vTP"/>
+                <constraint firstItem="SQD-ju-ez6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.75" id="97o-ov-hoF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SQD-ju-ez6" secondAttribute="trailing" constant="15" id="eHY-xi-Zud"/>
+                <constraint firstItem="SQD-ju-ez6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="itz-89-U19"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="X7R-KM-WDm" secondAttribute="trailing" constant="15" id="tX2-LC-MEI"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="88"/>
+        </view>
+    </objects>
+</document>

@@ -47,5 +47,49 @@ struct PersistenceLayer {
         userDefaults.set(habitsData, forKey: PersistenceLayer.userDefaultsHabitsKeyValue)
         userDefaults.synchronize()
     }
+    
+    mutating func delete(_ habitIndex: Int) {
+        // Remove habit at the given index
+        self.habits.remove(at: habitIndex)
 
+        // Persist the changes we made to our habits array
+        self.saveHabits()
+    }
+    
+    mutating func markHabitAsCompleted(_ habitIndex: Int) -> Habit {
+        var updatedHabit = self.habits[habitIndex]
+
+        guard updatedHabit.completedToday == false else { return updatedHabit }
+
+        updatedHabit.numberOfCompletions += 1
+
+        if let lastCompletionDate = updatedHabit.lastCompletionDate, lastCompletionDate.isYesterday {
+            updatedHabit.currentStreak += 1
+        } else {
+            updatedHabit.currentStreak = 1
+        }
+
+        if updatedHabit.currentStreak > updatedHabit.bestStreak {
+            updatedHabit.bestStreak = updatedHabit.currentStreak
+        }
+
+        let now = Date()
+        updatedHabit.lastCompletionDate = now
+
+        self.habits[habitIndex] = updatedHabit
+
+        self.saveHabits()
+        return updatedHabit
+    }
+    
+     mutating func swapHabits(habitIndex: Int, destinationIndex: Int) {
+            let habitToSwap = self.habits[habitIndex]
+            self.habits.remove(at: habitIndex)
+            self.habits.insert(habitToSwap, at: destinationIndex)
+            self.saveHabits()
+        }
+
+     mutating func setNeedsToReloadHabits() {
+            self.loadHabits()
+    }
 }
