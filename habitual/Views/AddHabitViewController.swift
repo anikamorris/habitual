@@ -36,6 +36,14 @@ class AddHabitViewController: UIViewController {
     }
 
     @IBAction func pickPhotoButtonPressed(_ sender: Any) {
+        // unwrap selectedIndexPath
+        guard let selectedIndexPath = selectedIndexPath else { return }
+        // instantiate confirm habit vc
+        let confirmHabitVC = ConfirmHabitViewController.instantiate()
+        // set next vc's image property to habitImages[selectedImagePath]
+        confirmHabitVC.habitImage = habitImages[selectedIndexPath.row]
+        // present confirm habit vc
+        navigationController?.pushViewController(confirmHabitVC, animated: true)
     }
     
     func setupNavBar() {

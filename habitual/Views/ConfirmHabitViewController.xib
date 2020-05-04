@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConfirmHabitViewController" customModule="habitual" customModuleProvider="target">
+            <connections>
+                <outlet property="createHabitButton" destination="tH0-f5-9qL" id="LOp-pa-Ypp"/>
+                <outlet property="habitImageView" destination="OhY-tb-ptY" id="4r2-go-vNL"/>
+                <outlet property="habitTextField" destination="smq-jl-vKJ" id="fjq-co-Tmg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="uOI-Cd-XEw">
+                    <rect key="frame" x="40" y="84" width="334" height="503"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OhY-tb-ptY">
+                            <rect key="frame" x="33.5" y="0.0" width="267" height="302"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Your New Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vc3-we-ceB">
+                            <rect key="frame" x="53.5" y="352" width="227.5" height="51"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name of Habit" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="smq-jl-vKJ">
+                            <rect key="frame" x="0.0" y="453" width="334" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="i4L-7O-DWn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="OhY-tb-ptY" firstAttribute="width" secondItem="uOI-Cd-XEw" secondAttribute="width" multiplier="0.8" id="1hb-BS-QdX"/>
+                        <constraint firstItem="smq-jl-vKJ" firstAttribute="width" secondItem="uOI-Cd-XEw" secondAttribute="width" id="YuU-bW-HGr"/>
+                        <constraint firstItem="OhY-tb-ptY" firstAttribute="height" secondItem="uOI-Cd-XEw" secondAttribute="height" multiplier="0.6" id="yWW-Ej-Qpc"/>
+                    </constraints>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tH0-f5-9qL">
+                    <rect key="frame" x="25" y="787" width="364" height="50"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="WYg-zp-OUX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Create Habit!">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="createHabitButtonPressed:" destination="-1" eventType="touchUpInside" id="BeY-lp-Sjv"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uOI-Cd-XEw" secondAttribute="trailing" constant="40" id="4EI-3L-sIm"/>
+                <constraint firstItem="uOI-Cd-XEw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="6Bm-ka-Jyz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tH0-f5-9qL" secondAttribute="bottom" constant="25" id="Caz-M5-wGI"/>
+                <constraint firstItem="tH0-f5-9qL" firstAttribute="top" secondItem="uOI-Cd-XEw" secondAttribute="bottom" constant="200" id="PWi-B0-ct2"/>
+                <constraint firstItem="tH0-f5-9qL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="dwq-cL-QpF"/>
+                <constraint firstItem="uOI-Cd-XEw" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="gkq-6w-DGH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tH0-f5-9qL" secondAttribute="trailing" constant="25" id="wru-60-kAm"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="88"/>
+        </view>
+    </objects>
+</document>
